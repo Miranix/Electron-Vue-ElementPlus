@@ -1,0 +1,27 @@
+{
+  "name": "{{name}}",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "{{author}}",
+    "email": "{{email}}"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start-web": "nx run electron-renderer:start",
+    "start-app": "nx run electron-main:start",
+    "start": "node scripts/start.mjs",
+    "build-web": "nx run electron-renderer:build",
+    "build-win": "nx run electron-main:build:win",
+    "build-app": "nx run main-note:build",
+    "build": "yarn build-web && yarn build-win"
+  },
+  "dependencies": {
+    "electron-builder": "^24.9.1"
+  },
+  "workspaces": [
+    "electron-renderer",
+    "electron-main"
+  ]
+}

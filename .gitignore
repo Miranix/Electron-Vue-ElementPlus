@@ -1,0 +1,6 @@
+/.nx/
+/.idea/
+/.history/
+node_modules
+build/*
+electron-main/render

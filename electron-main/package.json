@@ -1,0 +1,41 @@
+{
+  "name": "electron-main",
+  "AppName":"{{name}}",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "{{author}}",
+    "email": "{{email}}"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-builder --win --ia32",
+    "build": "rollup -c --bundleConfigAsCjs",
+    "build:mac": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "28.1.0",
+    "fs-extra": "^11.2.0"
+  },
+  "build": {
+    "productName": "electron-main",
+    "appId": "com.electron-main.app",
+    "asar": true,
+    "directories": {
+      "output": "../build"
+    },
+    "win": {
+      "icon": "./logo.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
